@@ -3,6 +3,7 @@ import { GlobalStyles } from './GlobalStyles';
 import { Section } from './section/section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
+import { Wrap } from './App.styled';
 
 export class App extends Component {
   static defaultProps = {
@@ -32,7 +33,7 @@ export class App extends Component {
   };
   render() {
     return (
-      <>
+      <Wrap>
         <Section title="Please leave feedback">
           <FeedbackOptions feedback={this.decrementValue} />
         </Section>
@@ -44,7 +45,7 @@ export class App extends Component {
           />
         </Section>
         <GlobalStyles />
-      </>
+      </Wrap>
     );
   }
 }

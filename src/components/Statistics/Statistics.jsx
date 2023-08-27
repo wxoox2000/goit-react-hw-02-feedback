@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { List } from './Statistics.styled';
+import { List, StatItem } from './Statistics.styled';
 import { Notification } from 'components/notification/Notification';
 
 export class Statistics extends Component {
@@ -10,21 +10,21 @@ export class Statistics extends Component {
       <>
       {isData ? (<Notification message="There is no feedback"/>) : (
         <List>
-        <li>
+        <StatItem>
           <p>good: {data.good}</p>
-        </li>
-        <li>
+        </StatItem>
+        <StatItem>
           <p>neutral: {data.neutral}</p>
-        </li>
-        <li>
+        </StatItem>
+        <StatItem>
           <p>bad: {data.bad}</p>
-        </li>
-        <li>
+        </StatItem>
+        <StatItem>
           <p>total: {this.props.total}</p>
-        </li>
-        <li>
+        </StatItem>
+        <StatItem $percentage ={this.props.percentage}>
           <p>positivePercentage: {this.props.percentage}%</p>
-        </li>
+        </StatItem>
       </List>
       )}
       </>
